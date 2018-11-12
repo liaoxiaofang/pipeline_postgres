@@ -29,7 +29,7 @@ spec:
   type: NodePort
   ports:
   - name: tcp
-    nodePort: 10361
+    nodePort: 10351
     port: 5432
     protocol: TCP
     targetPort: 5432
