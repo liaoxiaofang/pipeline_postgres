@@ -8,7 +8,7 @@ ADD pg_hba.conf /var/lib/postgresql/
 ADD innode-20181019null.sql /var/lib/postgresql/
 RUN su postgres
 RUN createdb innode -U postgres -E UTF8 -e
-RUN psql -d innode -U innodb -f /var/lib/postgresql/innode-20181019null.sql
+#RUN psql -d innode -U innodb -f /var/lib/postgresql/innode-20181019null.sql
      
 VOLUME /var/lib/postgresql/data
 
