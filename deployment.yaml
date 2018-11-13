@@ -17,12 +17,19 @@ spec:
         image: 192.168.3.207:5000/fft/postgres:v2.0
         ports:
         - containerPort: 5432
-         volumeMounts:
+        volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgres-data
+          name: vol1-postgres-data
           subPath: postgres-data
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: dockerhubfft207
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
       volumes:
-      - name: postgres-data
+      - name: vol1-postgres-data
         persistentVolumeClaim:
           claimName: pipeline-postgres
 ---
