@@ -17,7 +17,14 @@ spec:
         image: 192.168.3.207:5000/fft/postgres:v2.0
         ports:
         - containerPort: 5432
-
+         volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+          subPath: postgres-data
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: pipeline-postgres
 ---
 apiVersion: v1
 kind: Service
