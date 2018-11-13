@@ -6,9 +6,8 @@ FROM 192.168.3.207:5000/fft/postgres:v1.3
 #RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ADD pg_hba.conf /var/lib/postgresql/
 ADD innode-20181019null.sql /var/lib/postgresql/
-RUN su postgres
-RUN createdb innode -U postgres -E UTF8 -e
-#RUN psql -d innode -U innodb -f /var/lib/postgresql/innode-20181019null.sql
+RUN su postgres && createdb innode -U postgres -E UTF8 -e
+#RUN psql -d innode -U postgres -f /var/lib/postgresql/innode-20181019null.sql
      
 VOLUME /var/lib/postgresql/data
 
