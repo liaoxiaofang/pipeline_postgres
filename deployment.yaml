@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: 192.168.3.207:5000/fft/postgres:v1.9
+        image: 192.168.3.207:5000/fft/postgres:v2.0
         ports:
         - containerPort: 5432
 
