@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: fft/postgres:v2.3
+      tag: fft/postgres:v2.4
       pushRemote: true
       registry: 192.168.3.207:5000
     env:
