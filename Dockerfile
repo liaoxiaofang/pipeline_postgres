@@ -14,5 +14,5 @@ VOLUME /var/lib/postgresql/data
 
 EXPOSE 5432
 
-ENTRYPOINT ["/tmp/createdb.sh"]
-#CMD ["postgres"]
+#ENTRYPOINT ["/tmp/createdb.sh"]
+CMD ["postgres"]
