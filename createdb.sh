@@ -5,7 +5,6 @@ cp /tmp/pg_hba.conf /var/lib/postgresql/data
 su postgres 
 createdb innode -U postgres -E UTF8 -e
 psql -d innode -U postgres -f /tmp/innode-20181019null.sql
-psql -d postgres -U postgres
-CREATE USER innodb WITH PASSWORD '888888';
-GRANT ALL PRIVILEGES ON DATABASE innode to innodb;
-\q
+psql -d postgres -U postgres -c "CREATE USER innodb WITH PASSWORD '888888'"
+psql -d postgres -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE innode to innodb"
+
