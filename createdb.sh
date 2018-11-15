@@ -1,4 +1,5 @@
 #!/bin/bash
+postgres
 #将如果需要postgres以外的数据库用户连接，请将该文件覆盖到/var/lib/postgresql/data目录下(注：目前只允许postgres连接)
 cp /tmp/pg_hba.conf /var/lib/postgresql/data
 #创建innode实例
