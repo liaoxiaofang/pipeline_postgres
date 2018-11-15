@@ -1,6 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  annotations:
+    field.cattle.io/creatorId: user-postgres  
   name: postgres-liao-deployment
 spec:
   replicas: 1
@@ -9,6 +11,8 @@ spec:
       app: postgres
   template:
     metadata:
+      annotations:
+        field.cattle.io/ports: '[[{"containerPort":5432,"dnsName":"postgres-nodeport","kind":"NodePort","name":"5432tcp10351","protocol":"TCP","sourcePort":10351}]]'      
       labels:
         app: postgres
     spec:
@@ -35,7 +39,7 @@ spec:
     app: postgres
   type: NodePort
   ports:
-  - name: tcp
+  - name: 5432tcp10351
     nodePort: 10351
     port: 5432
     protocol: TCP
